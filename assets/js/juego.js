@@ -39,7 +39,7 @@ const crearbaraja = () => {
 crearbaraja();
 
 // FUNCION DE PEDIR CARTA
-const perdirCarta = () => {
+const pedirCarta = () => {
     if(baraja.length == 0){
         throw "No hay cartas en la baraja"
     }
@@ -66,7 +66,7 @@ const turnoComputadora = (puntosMinimos) => {
 
     do {
         // SE EJECUTA POR LO MENOS UNA VEZ
-        const carta = perdirCarta();
+        const carta = pedirCarta();
 
         puntosComputadora = puntosComputadora + valorCarta(carta);
         puntosHtml[1].innerText = puntosComputadora;
@@ -93,13 +93,13 @@ const turnoComputadora = (puntosMinimos) => {
         } else{
             alert("Computadora Gana");
         }
-    },100);
+    },180);
     
 };
 
 // FUNCION PEDIR CARTA DESDE EL BOTON
 btnPedir.addEventListener("click",() => {
-    const carta = perdirCarta();
+    const carta = pedirCarta();
     puntosJugador = puntosJugador + valorCarta(carta);
     puntosHtml[0].innerText = puntosJugador;
 
